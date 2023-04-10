@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button onclick="storeInLocalStorage()">Add Students</button>
+
+<body>
+    <script>
+         let prvStd = localStorage.getItem('students');
+         let students = prvStd ? JSON.parse(prvStd) : [];
+        function storeInLocalStorage() {
+            const std = {
+                name: prompt("Enter your name:"),
+                Course: prompt("Enter your course"),
+                rollNum: +prompt("Enter your roll number")
+            }
+            students.push(std);
+            let stringifyStd = JSON.stringify(students)
+            localStorage.setItem("students", stringifyStd)
+        }
+
+    </script>
+</body>
+
+</html>

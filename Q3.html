@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Assignment 2</title>
+</head>
+<body>
+    <div class="wrapper">
+        <textarea type="text" id="addPara"></textarea><br>
+        <input onclick="addPara()" value="Add Paragraph" type="button">
+        <p id="mainPara"></p>
+    </div>
+    <script>
+            let addPara = function() {
+            let  pushPara = document.getElementById("addPara").value;
+            const mainPara = document.getElementById('mainPara');
+            const newPara = document.createElement("p");
+            newPara.classList = "para-item";
+            const paraContent = `${pushPara}`;
+            newPara.innerHTML += paraContent;
+            mainPara.appendChild(newPara);
+            }
+    </script>
+</body>
+</html>

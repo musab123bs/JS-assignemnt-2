@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Assignment 2</title>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="text" id="addItem"><br><br>
+        <input onclick="addList()" value="Add Item" type="button">
+        <ul id="mainList">
+        </ul>
+    </div>
+    <script>
+            let addList = function() {
+            let  pushItem = document.getElementById("addItem").value;
+            const mainList = document.getElementById('mainList');
+            const newList = document.createElement("li");
+            newList.classList = "list-item";
+            const cardContent = `${pushItem}`;
+            newList.innerHTML += cardContent;
+            mainList.appendChild(newList);
+            }
+    </script>
+</body>
+</html>
